@@ -28,12 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            components = new System.ComponentModel.Container();
+            refreshActiveAudioDevice = new System.Windows.Forms.Timer(components);
+            activeOutputDevice = new Label();
+            activeInputDevice = new Label();
+            SuspendLayout();
+            // 
+            // refreshActiveAudioDevice
+            // 
+            refreshActiveAudioDevice.Interval = 1;
+            // 
+            // activeOutputDevice
+            // 
+            activeOutputDevice.AutoSize = true;
+            activeOutputDevice.Location = new Point(10, 10);
+            activeOutputDevice.Name = "activeOutputDevice";
+            activeOutputDevice.Size = new Size(195, 30);
+            activeOutputDevice.TabIndex = 2;
+            activeOutputDevice.Text = "activeOutputDevice";
+            // 
+            // activeInputDevice
+            // 
+            activeInputDevice.AutoSize = true;
+            activeInputDevice.Location = new Point(10, 50);
+            activeInputDevice.Name = "activeInputDevice";
+            activeInputDevice.Size = new Size(178, 30);
+            activeInputDevice.TabIndex = 3;
+            activeInputDevice.Text = "activeInputDevice";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(576, 96);
+            Controls.Add(activeInputDevice);
+            Controls.Add(activeOutputDevice);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+        private System.Windows.Forms.Timer refreshActiveAudioDevice;
+        private Label activeOutputDevice;
+        private Label activeInputDevice;
     }
 }
